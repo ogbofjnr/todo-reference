@@ -1,0 +1,11 @@
+node_modules
+dist
+coverage
+playwright-report
+test-results
+*.tsbuildinfo
+.DS_Store
+
+# Environment: only the documented example is committed.
+.env*
+!.env.example

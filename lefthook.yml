@@ -1,0 +1,17 @@
+# Fast, staged-only checks. The full gate is `pnpm check` (same as CI).
+pre-commit:
+  parallel: true
+  jobs:
+    - name: lint
+      glob: '*.{ts,tsx}'
+      run: pnpm exec eslint --fix --max-warnings=0 {staged_files}
+      stage_fixed: true
+    - name: format
+      glob: '*.{ts,tsx,js,json,md,yml,yaml,css,html}'
+      run: pnpm exec prettier --write --ignore-unknown {staged_files}
+      stage_fixed: true
+
+commit-msg:
+  jobs:
+    - name: commitlint
+      run: pnpm exec commitlint --edit {1}

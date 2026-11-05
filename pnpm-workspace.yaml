@@ -1,0 +1,18 @@
+# Supply-chain guard: refuse package versions published less than 24h ago.
+# pnpm 11+ defaults to 1440 but non-strict (it silently adds exclusions);
+# setting it explicitly makes it strict. Never add minimumReleaseAgeExclude:
+# wait a day or pin the previous version. See docs/adr/0002-stack-and-toolchain.md.
+minimumReleaseAge: 1440
+
+# Exact versions in package.json; Dependabot proposes upgrades.
+saveExact: true
+
+# Only packages listed here may run install scripts.
+allowBuilds:
+  lefthook: true
+
+# eslint-plugin-jsx-a11y@6.10.2 (latest upstream) still caps its peer at ESLint 9.
+# Its rules work on ESLint 10 (verified). See docs/adr/0006-linting-and-formatting.md.
+peerDependencyRules:
+  allowedVersions:
+    eslint-plugin-jsx-a11y>eslint: '10'
