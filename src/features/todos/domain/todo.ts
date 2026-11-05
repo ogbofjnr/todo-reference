@@ -6,7 +6,7 @@ export interface Todo {
 
 export const TITLE_MAX_LENGTH = 200;
 
-type TitleError = 'empty' | 'too-long';
+export type TitleError = 'empty' | 'too-long';
 
 export type TitleValidation =
   | { readonly ok: true; readonly title: string }

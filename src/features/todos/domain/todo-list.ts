@@ -21,7 +21,7 @@ export function applyChange(todos: readonly Todo[], change: TodoChange): readonl
   }
 }
 
-const FILTERS = ['all', 'active', 'completed'] as const;
+export const FILTERS = ['all', 'active', 'completed'] as const;
 export type Filter = (typeof FILTERS)[number];
 
 function isFilter(value: string): value is Filter {
