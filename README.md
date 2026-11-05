@@ -1,5 +1,7 @@
 # todo-reference
 
+[![CI](https://github.com/ogbofjnr/todo-reference/actions/workflows/ci.yml/badge.svg)](https://github.com/ogbofjnr/todo-reference/actions/workflows/ci.yml)
+
 A small Todo app built as a reference for **production-grade React architecture**: strict
 types, machine-enforced rules, tests at every level, and a written reason for every tool and
 layer, including the ones left out.
